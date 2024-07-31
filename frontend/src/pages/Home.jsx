@@ -8,12 +8,13 @@ import { BsInfoCircle } from "react-icons/bs"
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md"
 import BookTable from "../components/home/BookTable.jsx"
 import BookCard from '../components/home/BookCard.jsx'
+import { useAuth } from '../context/AuthContext.jsx'
 
 const Home = () => {
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(false)
   const [homeType, setHomeType] = useState('table')
-
+  const {logout, name} = useAuth()
   useEffect(() => {
     setLoading(true)
     axios
@@ -32,9 +33,11 @@ const Home = () => {
       <div className='flex justify-center item-center'>
         <button className='text-white text-xl p-2 m-2 bg-sky-600 rounded-lg hover:shadow-lg hover:text-black' onClick={() => setHomeType('table')}>Table</button>
         <button className='text-white text-xl p-2 m-2 bg-sky-600 rounded-lg hover:shadow-lg hover:text-black' onClick={() => setHomeType('card')}>Card</button>
+        <button className='flex-self justify-end text-white text-xl p-2 m-2 bg-red-600 rounded-lg hover:shadow-lg hover:text-black' onClick={logout}>Logout</button>
       </div>
       <div className='flex justify-between item-center'>
         <h1 className='my-8 text-3xl'>Books List</h1>
+        <h1 className='my-8 text-3xl'>Hello {name}</h1>
         <Link to={"/books/create"}>
           <MdOutlineAddBox className='text-4xl text-sky-800 my-8' />
         </Link>

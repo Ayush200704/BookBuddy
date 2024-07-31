@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { router } from "./Routes/BookRoutes.js";
 import cors from "cors"
 import { errorHandler } from "./Middleware/errorHandler.js";
+import userRouter from "./Routes/UserRoutes.js";
 
 dotenv.config();
 const PORT = process.env.PORT
@@ -16,6 +17,7 @@ app.use(express.json())
 
 app.use(cors())
 app.use("/books", router)
+app.use("/api/auth", userRouter)
 app.use(errorHandler)
 // app.use(cors({
 //     origin: "http://localhost:3000",

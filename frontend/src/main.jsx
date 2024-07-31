@@ -4,11 +4,16 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from "react-router-dom"
 import { SnackbarProvider } from "notistack"
+import { AuthProvider } from './context/AuthContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <SnackbarProvider>
-      <App />
-    </SnackbarProvider>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <SnackbarProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </SnackbarProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 )
