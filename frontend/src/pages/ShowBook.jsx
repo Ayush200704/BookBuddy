@@ -30,7 +30,7 @@ const ShowBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='flex flex-col p-4 border-2 border-sky-600 w-fit p-4 rounded-lg mx-auto'>
+        <div className='flex flex-col p-4 border-2 border-sky-600 w-fit rounded-lg mx-auto'>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Id:</span>
             <span className='text-xl mr-4 text-black-800'>{book._id}</span>
