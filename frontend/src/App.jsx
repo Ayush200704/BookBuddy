@@ -9,6 +9,8 @@ import Signup from './pages/Signup.jsx'
 import Login from './pages/Login.jsx'
 import ForgetPassword from './pages/ForgetPassword.jsx'
 import { useAuth } from './context/AuthContext.jsx'
+import MySelf from './pages/MySelf.jsx'
+import Contribute from './pages/Contribute.jsx'
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
       <Route path='/' element={<ProtectedRoute Component={Home} />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/myself' element={<MySelf />} />
+      <Route path='/contribute' element={<Contribute />} />
       <Route path='/forgetPassword' element={<ForgetPassword />} />
       <Route path='/books/create' element={<CreateBook />} />
       <Route path='/books/details/:id' element={<ShowBook />} />

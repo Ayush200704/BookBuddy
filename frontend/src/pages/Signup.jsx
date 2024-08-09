@@ -5,7 +5,6 @@ import axios from "axios"
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import {useSnackbar} from "notistack"
 import { useAuth } from '../context/AuthContext.jsx';
-
 const Signup = () => {
     const [data, setData] = useState(
         {
@@ -58,8 +57,8 @@ const Signup = () => {
     return (
         <>
             <div className='w-screen h-screen bg-no-repeat bg-center bg-cover shadow-lg' style={{ backgroundImage: `url(${signupBg})` }}>
-                <div className='flex justify-center items-center w-full h-full'>
-                    <div className='flex flex-col w-[565px] h-[900px] bg-white rounded-lg shadow-2xl justify-center items-center'>
+                <div className='flex justify-center items-center w-full h-full px-4'>
+                    <div className='flex flex-col w-[565px] h-[900px] bg-white rounded-lg shadow-2xl justify-center items-center p-6'>
                         <h1 className='text-4xl font-oswald'>My <span className='text-4xl text-custom-red font-oswald'>Book</span></h1>
                         <span className='text-4xl text-custom-red font-oswald mb-7'>Buddy</span>
                         <span className='text-2xl mt-7 mb-14'>Registration</span>

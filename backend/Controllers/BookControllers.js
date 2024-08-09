@@ -66,3 +66,14 @@ export const deleteApi = AsyncWrapper(async (req, res) => {
     }
     return res.status(200).json({ message: "successfully deleted" })
 })
+
+export const searchBook = AsyncWrapper(async(req, res)=>{
+    const {title} = req.query;
+    const b = await Book.findOne({title: new RegExp(title, 'i')})
+    if(b){
+        return res.json({b})
+    } 
+    else{
+        return res.status(404).json({ message: 'Book not found' });
+    }
+})

@@ -35,7 +35,9 @@ const Login = () => {
             .post("http://localhost:5555/api/auth/login", data)
             .then(res => {
                 console.log(res.data.message)
+                localStorage.setItem('token', res.data.token)
                 setToken(res.data.token)
+                localStorage.setItem('username', res.data.username)
                 setName(res.data.username)
                 navigate("/")
                 enqueueSnackbar("Successfully Login", {variant: 'success'})

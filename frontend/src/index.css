@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.scrollbar-hidden {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none; 
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 5px;
+    background: #F3F3F7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FA7C54;
+    -webkit-border-radius: 1ex;
+}
+

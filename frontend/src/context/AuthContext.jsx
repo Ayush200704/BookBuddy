@@ -5,8 +5,8 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const {enqueueSnackbar} = useSnackbar()
-    const [token, setToken] = useState(null)
-    const [name, setName] = useState("")
+    const [token, setToken] = useState(localStorage.getItem('token'))
+    const [name, setName] = useState(localStorage.getItem('username'))
     const [isAuth, setIsAuth] = useState(false)
 
     useEffect(() => {
@@ -18,8 +18,8 @@ export const AuthProvider = ({ children }) => {
     }, [token])
 
     const logout = () => {
-        setToken(null)
-        setName("")
+        localStorage.removeItem('token')
+        localStorage.removeItem('username')
         setIsAuth(false)
         enqueueSnackbar("Successfully Logout", {variant: 'success'})
     }

@@ -10,15 +10,15 @@ import BookModel from "./BookModel.jsx"
 const BookSingleCard = ({book}) => {
     const [showModel, setShowModel] = useState(false)
     return (
-        <div className='border-2 border-red-300 rounded-lg p-4 m-4 relative hover:shadow-lg'>
-            <h2 className='absolute top-1 right-2 bg-red-300 rounded-lg px-4 py-1 w-fit'>{book.publishYear}</h2>
+        <div className='border-2 bg-white border-custom-red rounded-lg p-4 m-4 relative hover:shadow-lg'>
+            <h2 className='absolute top-1 right-2 bg-custom-red text-fuchsia-50 rounded-lg px-4 py-1 w-fit'>{book.publishYear}</h2>
             <h3 className='text-gray-500'>{book._id}</h3>
             <div className='flex justify-start item-center mt-4'>
-                <PiBookOpenTextLight className='text-2xl mr-2 text-red-300 ' />
+                <PiBookOpenTextLight className='text-2xl mr-2 text-custom-red ' />
                 <h2>{book.title}</h2>
             </div>
             <div className='flex justify-start item-center mt-2'>
-                <BiUserCircle className='text-2xl mr-2 text-red-300 ' />
+                <BiUserCircle className='text-2xl mr-2 text-custom-red ' />
                 <h2>{book.author}</h2>
             </div>
             <div className='flex justify-between item-center mt-4 p-4'>
@@ -26,9 +26,7 @@ const BookSingleCard = ({book}) => {
                     className='text-3xl text-blue-800 hover:text-black cursor-pointer'
                     onClick={()=>setShowModel(true)}
                 />
-                <Link to={`/books/details/${book._id}`}>
-                    <BsInfoCircle className='text-2xl text-green-800 hover:text-black' />
-                </Link>
+                
                 <Link to={`/books/edit/${book._id}`}>
                     <AiOutlineEdit className='text-2xl text-yellow-600 hover:text-black' />
                 </Link>
