@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
+import { Link } from 'react-router-dom';
 
-const Name = ({ name,logout }) => {
+const Name = ({ name, logout }) => {
     const [showDiv, setShowDiv] = useState(false)
 
     const toggleShowDiv = () => {
@@ -19,8 +20,12 @@ const Name = ({ name,logout }) => {
                 {showDiv ?
                     <div className='w-[98%] border-2 h-auto bg-white mt-[30%] z-50 rounded-lg ml-1 absolute top-0'>
                         <div className='p-1'>
-                            <h1 className='pl-2 rounded-sm my-3 text-base py-1 m-1 hover:bg-gray-100 cursor-pointer'>My Profile</h1>
-                            <h1 className='pl-2 rounded-sm my-3 text-base py-1 m-1 hover:bg-gray-100 cursor-pointer'>My Shelf</h1>
+                            <Link to="/myself">
+                                <h1 className="pl-2 rounded-sm my-3 text-base py-1 m-1 hover:bg-gray-100 cursor-pointer">
+                                    My Profile
+                                </h1>
+                            </Link>
+
                             <h1 className='px-4 py-2 rounded-md border border-neutral-300 bg-red-500 text-white text-center text-base cursor-pointer hover:-translate-y-1 transform transition duration-200 hover:shadow-md' onClick={logout}>Logout</h1>
                         </div>
                     </div>
