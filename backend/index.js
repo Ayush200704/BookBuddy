@@ -20,7 +20,7 @@ app.use(cors())
 //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 //     allowedHeaders: ['Content-Type']
 // }))
-app.use("/api/books", router)
+app.use("/books", router)
 app.use("/api/auth", userRouter)
 app.use(errorHandler)
 
